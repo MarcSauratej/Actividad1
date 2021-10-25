@@ -2,7 +2,7 @@
 
 function auth($gdb,$email,$passwd):bool{
     try{ 
-
+        
         $stmt=$gdb->prepare('SELECT * FROM users WHERE email=:email LIMIT 1');
         $stmt->execute([':email'=>$email]);
         $count=$stmt->rowCount();

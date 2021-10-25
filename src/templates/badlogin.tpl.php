@@ -17,7 +17,5 @@ include 'header.tpl.php';
 
         ?>
     </header>
-
-
 </body>
 </html>

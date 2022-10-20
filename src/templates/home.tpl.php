@@ -37,8 +37,7 @@ include 'header.tpl.php';
                 ” letting everything work itself out rather than attempting to control everyone and everything. 
                 Everything finally resolves itself.
                 </p>
-
-                <!--<button id="register">SIGN UP</button>-->
+                
                 </div>  
                 
             </div>

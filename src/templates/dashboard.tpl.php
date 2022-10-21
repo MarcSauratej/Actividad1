@@ -29,7 +29,7 @@ include 'header.tpl.php';
         <br>
         <section class='dashboard'>
             
-        </section><button class>MISMO BOTON, QUE SE SUPONE QUE HACE LO MISMO PERO NO TIRA</button>
+        </section><button id="u">MISMO BOTON, QUE SE SUPONE QUE HACE LO MISMO PERO NO TIRA</button>
               <h2 id="lastLogin">Ultima Sesion: </h2>
             </div>
         </section>
@@ -43,28 +43,20 @@ include 'header.tpl.php';
 
     //Ultimo Inicio de Sesion: dd/mm/yyyy HH:MM:SS
     let clock=document.getElementById("lastLogin");
-    clock.innerHTML= "";
-                var ahora= new Date;
-                let dia= ahora.getDay();
-                let mes= ahora.getMonth();
-                let año= ahora.getFullYear();
-                let hora= ahora.getHours();
-                let minutos= ahora.getMinutes();
-                let segundos=ahora.getSeconds();
-                let meridiano= "AM";
-                let time= dia+"/"+mes+"/"+año+" "+hora+":"+minutos+":"+segundos+" "+meridiano;                
+    let u= document.getElementById("u");
+    u.addEventListener("click",function(){
+        <?php  $login = date('m-d-Y h:i:s a', time()); $lastlogin= $login;?>
+        alert('<?php echo $login ?>');
+
+    });
+    clock.innerHTML= '<?php echo"ultima sesión: "+ $login ?>';
+    //Ultimo Inicio de Sesion: dd/mm/yyyy HH:MM:SS
+   /*let time;
+    time= 
+
     clock.innerHTML+= time;
-               if(hora == 0){
-                    hora=12;
-                }
-                if (hora > 12){
-                    hora -= 12; 
-                    meridiano = "PM";
-                }
-                if (minutos < 10){
-                  minutos= 0+minutos;
-                }
-    
+    console.log(time);*/
+
 //CUIDADO QUE PETA(no se si peta pero probar si boton borra todas las cookies)
 let bt0=document.getElementById("bt0");
       bt0.addEventListener('click',function() {

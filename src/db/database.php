@@ -42,3 +42,14 @@ function auth($db,$email,$pass):bool
             }
             return false;
         }
+
+        function update($db,$table,$usr,$lastlogin):bool {
+            if ($usr!=null){
+                $stmt= $db->prepare("UPDATE $table(username, lastlogin) SET lastlogin = VALUES(?) WHERE username =(?)");
+                $stmt-> bindParam(1,$usr);
+                $stmt-> bindParam(5,$lastlogin);
+                $stmt->execute([$usr,$lastlogin]);   
+                return true;
+            }     
+            return false;                
+        }
